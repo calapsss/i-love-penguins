@@ -9,6 +9,17 @@
     ]
   },
   "Packages": {
+    "DBI": {
+      "Package": "DBI",
+      "Version": "1.2.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "methods"
+      ],
+      "Hash": "164809cd72e1d5160b4cb3aa57f510fe"
+    },
     "MASS": {
       "Package": "MASS",
       "Version": "7.3-60.0.1",
@@ -71,6 +82,18 @@
       ],
       "Hash": "543776ae6848fde2f48ff3816d0628bc"
     },
+    "blob": {
+      "Package": "blob",
+      "Version": "1.2.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "methods",
+        "rlang",
+        "vctrs"
+      ],
+      "Hash": "40415719b5a479b87949f3aa0aee737c"
+    },
     "bslib": {
       "Package": "bslib",
       "Version": "0.6.1",
@@ -128,6 +151,44 @@
       ],
       "Hash": "f20c47fd52fae58b4e377c37bb8c335b"
     },
+    "cpp11": {
+      "Package": "cpp11",
+      "Version": "0.4.7",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "5a295d7d963cc5035284dcdbaf334f4e"
+    },
+    "dbplyr": {
+      "Package": "dbplyr",
+      "Version": "2.4.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "DBI",
+        "R",
+        "R6",
+        "blob",
+        "cli",
+        "dplyr",
+        "glue",
+        "lifecycle",
+        "magrittr",
+        "methods",
+        "pillar",
+        "purrr",
+        "rlang",
+        "tibble",
+        "tidyr",
+        "tidyselect",
+        "utils",
+        "vctrs",
+        "withr"
+      ],
+      "Hash": "59351f28a81f0742720b85363c4fdd61"
+    },
     "digest": {
       "Package": "digest",
       "Version": "0.6.34",
@@ -161,6 +222,19 @@
         "vctrs"
       ],
       "Hash": "fedd9d00c2944ff00a0e2696ccf048ec"
+    },
+    "duckdb": {
+      "Package": "duckdb",
+      "Version": "0.9.2-1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "DBI",
+        "R",
+        "methods",
+        "utils"
+      ],
+      "Hash": "3ce50b727c58e724c4c61397a41946ac"
     },
     "ellipsis": {
       "Package": "ellipsis",
@@ -482,16 +556,6 @@
       ],
       "Hash": "a623a2239e642806158bc4dc3f51565d"
     },
-    "palmerpenguins": {
-      "Package": "palmerpenguins",
-      "Version": "0.1.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R"
-      ],
-      "Hash": "6c6861efbc13c1d543749e9c7be4a592"
-    },
     "pillar": {
       "Package": "pillar",
       "Version": "1.9.0",
@@ -518,6 +582,21 @@
         "utils"
       ],
       "Hash": "01f28d4278f15c76cddbea05899c5d6f"
+    },
+    "purrr": {
+      "Package": "purrr",
+      "Version": "1.0.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "cli",
+        "lifecycle",
+        "magrittr",
+        "rlang",
+        "vctrs"
+      ],
+      "Hash": "1cba04a4e9414bdefc9dcaa99649a8dc"
     },
     "rappdirs": {
       "Package": "rappdirs",
@@ -607,6 +686,36 @@
       ],
       "Hash": "c19df082ba346b0ffa6f833e92de34d1"
     },
+    "stringi": {
+      "Package": "stringi",
+      "Version": "1.8.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "stats",
+        "tools",
+        "utils"
+      ],
+      "Hash": "058aebddea264f4c99401515182e656a"
+    },
+    "stringr": {
+      "Package": "stringr",
+      "Version": "1.5.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "cli",
+        "glue",
+        "lifecycle",
+        "magrittr",
+        "rlang",
+        "stringi",
+        "vctrs"
+      ],
+      "Hash": "960e2ae9e09656611e0b8214ad543207"
+    },
     "tibble": {
       "Package": "tibble",
       "Version": "3.2.1",
@@ -625,6 +734,29 @@
         "vctrs"
       ],
       "Hash": "a84e2cc86d07289b3b6f5069df7a004c"
+    },
+    "tidyr": {
+      "Package": "tidyr",
+      "Version": "1.3.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "cli",
+        "cpp11",
+        "dplyr",
+        "glue",
+        "lifecycle",
+        "magrittr",
+        "purrr",
+        "rlang",
+        "stringr",
+        "tibble",
+        "tidyselect",
+        "utils",
+        "vctrs"
+      ],
+      "Hash": "915fb7ce036c22a6a33b5a8adb712eb1"
     },
     "tidyselect": {
       "Package": "tidyselect",

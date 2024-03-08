@@ -8,12 +8,14 @@ format:
 ## Penguin Size and Mass by Sex and Species
 
 
-```{r import}
-library(palmerpenguins)
-library(dplyr)
+```{r import-w-db}
 library(ggplot2)
-
-df <- palmerpenguins::penguins
+library(dbplyr)
+con <- DBI::dbConnect(
+  duckdb::duckdb(), 
+  dbdir = "my-db.duckdb"
+  )
+df <- dplyr::tbl(con, "penguins")
 ```
 
 
@@ -22,10 +24,11 @@ df %>%
   group_by(species, sex) %>%
   summarise(
     across(
-      where(is.numeric), 
+        ends_with("mm") | ends_with("g"),
       \(x) mean(x, na.rm = TRUE)
       )
     ) %>%
+  dplyr::collect() %>%
   knitr::kable()
 ```
 
@@ -38,3 +41,5 @@ df %>%
   geom_point() + 
   geom_smooth(method = "lm")
 ```
+
+
