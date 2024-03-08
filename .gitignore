@@ -3,3 +3,6 @@
 .RData
 .Ruserdata
 .venv
+renv
+
+/.quarto/
