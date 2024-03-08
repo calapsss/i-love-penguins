@@ -20,12 +20,13 @@ jobs:
         with:
           r-version: '4.2.0'
           use-public-rspm: true
+          working-directory: ./rstudio_project
 
       - name: Setup renv and install packages
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
-          working-directory: ./rstudio_project/renv
+          working-directory: ./rstudio_project
         env:
           RENV_CONFIG_REPOS_OVERRIDE: https://packagemanager.rstudio.com/all/latest
         
@@ -42,6 +43,8 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          working-directory: ./rstudio_project
       
 
       - name: Render and Publish
