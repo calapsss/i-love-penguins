@@ -30,6 +30,17 @@ jobs:
         env:
           RENV_CONFIG_REPOS_OVERRIDE: https://packagemanager.rstudio.com/all/latest/src/contrib/PACKAGES
 
+      - run: echo "RENV_PATHS_ROOT=/home/runner/work/_temp/renv" >> $GITHUB_ENV
+      - run: |
+          if (!requireNamespace("renv", quietly=TRUE)) {
+            install.packages("renv")
+          }
+          if (file.exists("renv/activate.R")) {
+            source("renv/activate.R")
+          } else {
+            stop("renv/activate.R not found")
+          }
+
       - name: Install Python and Dependencies
         uses: actions/setup-python@v4
         with:
