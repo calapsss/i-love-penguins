@@ -1,5 +1,4 @@
 on:
-  workflow_dispatch:
   push:
     branches: main
 
@@ -15,31 +14,20 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
+        uses: quarto-dev/quarto-actions/setup
 
       - name: Install R
-        uses: r-lib/actions/setup-r@v2
+        uses: r-lib/actions/setup-r
         with:
           r-version: '4.2.0'
           use-public-rspm: true
 
       - name: Setup renv and install packages
-        uses: r-lib/actions/setup-renv@v2
+        uses: r-lib/actions/setup-renv
         with:
           cache-version: 1
         env:
           RENV_CONFIG_REPOS_OVERRIDE: https://packagemanager.rstudio.com/all/latest/src/contrib/PACKAGES
-
-      - run: echo "RENV_PATHS_ROOT=/home/runner/work/_temp/renv" >> $GITHUB_ENV
-      - run: |
-          if (!requireNamespace("renv", quietly=TRUE)) {
-            install.packages("renv")
-          }
-          if (file.exists("renv/activate.R")) {
-            source("renv/activate.R")
-          } else {
-            stop("renv/activate.R not found")
-          }
 
       - name: Install Python and Dependencies
         uses: actions/setup-python@v4
@@ -50,7 +38,7 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Render and Publish
-        uses: quarto-dev/quarto-actions/publish@v2
+        uses: quarto-dev/quarto-actions/publish
         with:
           target: gh-pages
         env:
