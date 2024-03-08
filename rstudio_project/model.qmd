@@ -6,7 +6,7 @@ format:
 ---
 
 
-```{.python .cell-code}
+```{python import-libs }
 from palmerpenguins import penguins
 from pandas import get_dummies
 import numpy as np
@@ -17,7 +17,7 @@ from sklearn import preprocessing
 ## Get Data
 
 
-```{.python .cell-code}
+```{python load-df}
 df = penguins.load_penguins().dropna()
 
 df.head(3)
@@ -26,7 +26,7 @@ df.head(3)
 ## Define Model and Fit
 
 
-```{.python .cell-code}
+```{python model-def}
 X = get_dummies(df[['bill_length_mm', 'species', 'sex']], drop_first = True)
 y = df['body_mass_g']
 
@@ -36,7 +36,7 @@ model = LinearRegression().fit(X, y)
 ## Get some information
 
 
-```{.python .cell-code}
+```{python model-info}
 print(f"R^2 {model.score(X,y)}")
 print(f"Intercept {model.intercept_}")
 print(f"Columns {X.columns}")

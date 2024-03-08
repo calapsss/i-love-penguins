@@ -8,7 +8,7 @@ format:
 ## Penguin Size and Mass by Sex and Species
 
 
-```{.r .cell-code}
+```{r import}
 library(palmerpenguins)
 library(dplyr)
 library(ggplot2)
@@ -17,7 +17,7 @@ df <- palmerpenguins::penguins
 ```
 
 
-```{.r .cell-code}
+```{r summarize}
 df %>%
   group_by(species, sex) %>%
   summarise(
@@ -32,7 +32,7 @@ df %>%
 ## Penguin Size vs Mass by Species
 
 
-```{.r .cell-code}
+```{r compare}
 df %>%
   ggplot(aes(x = bill_length_mm, y = body_mass_g, color = species)) +
   geom_point() + 
