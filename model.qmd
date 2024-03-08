@@ -50,6 +50,7 @@ print(f"Coefficients {model.coef_}")
 ```{python store-model}
 from vetiver import *
 v = VetiverModel(model, model_name='penguin_model', prototype_data=X)
+b = pins.board_folder('/api/data/model', allow_pickle_read=True)
 ```
 
 
