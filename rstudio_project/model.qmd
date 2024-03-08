@@ -17,6 +17,7 @@ from sklearn import preprocessing
 
 
 ```{python load-df-from-db}
+import duckdb
 con = duckdb.connect('my-db.duckdb')
 df = con.execute("SELECT * FROM penguins").fetchdf().dropna()
 con.close()
