@@ -1,8 +1,0 @@
----
-title: "I Love Penguins"
----
-
-**Starter DevOps for Projects Data Science**
-
-
-
