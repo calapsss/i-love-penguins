@@ -1,4 +1,5 @@
 on:
+  workflow_dispatch:
   push:
     branches: main
 
@@ -50,7 +51,7 @@ jobs:
 
       - run: pip install jupyter
         working-directory: rstudio_project
-
+        
       - run: pip install -r requirements.txt
         working-directory: rstudio_project
       
