@@ -9,6 +9,7 @@ h11==0.14.0
 htmltools==0.5.1
 idna==3.6
 linkify-it-py==2.0.3
+logging==0.4.9.6
 markdown-it-py==3.0.0
 mdit-py-plugins==0.4.0
 mdurl==0.1.2
