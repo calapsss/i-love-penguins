@@ -10,7 +10,9 @@ format:
 
 ```{r import-w-db}
 library(ggplot2)
+library(dplyr)
 library(dbplyr)
+
 con <- DBI::dbConnect(
   duckdb::duckdb(), 
   dbdir = "my-db.duckdb"
