@@ -10,9 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    defaults:
-      run:
-        working-directory: ./rstudio_project
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
