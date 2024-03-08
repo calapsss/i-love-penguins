@@ -2,7 +2,6 @@ on:
   workflow_dispatch:
   push:
     branches: main
-  
 
 name: Quarto Publish
 
@@ -16,16 +15,16 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup
+        uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Install R
-        uses: r-lib/actions/setup-r
+        uses: r-lib/actions/setup-r@v2
         with:
           r-version: '4.2.0'
           use-public-rspm: true
 
       - name: Setup renv and install packages
-        uses: r-lib/actions/setup-renv
+        uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
         env:
@@ -40,7 +39,7 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Render and Publish
-        uses: quarto-dev/quarto-actions/publish
+        uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
         env:
