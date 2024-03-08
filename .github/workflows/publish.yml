@@ -12,7 +12,7 @@ jobs:
       contents: write
     steps:
       - name: Move to the Quarto repository
-        run: cd rstudio_project
+        run: cd rstudio_project/
       - name: Check out repository
         uses: actions/checkout@v2
 
