@@ -25,13 +25,17 @@ def defineModel(df):
     logging.info(f"Coefficients {model.coef_}")
     return model, X
 
+def getModel(folder, model_name):
+    b = pins.board_folder(folder, allow_pickle_read=True)
+    v = VetiverModel.from_pin(b, model_name, version = '20240308T141320Z-fdb5a')
+    return v
+
 
 
 
 
 logging.info("App Started")
-df = getData()
-model, X = defineModel(df) 
-v = VetiverModel(model, model_name='penguin_model', prototype_data=X)
-app = VetiverAPI(v, check_prototype=True)
+model = getModel('data/model', 'penguin_model')
+app = VetiverAPI(model, check_prototype=True)
 
+app.run()
