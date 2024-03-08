@@ -25,7 +25,7 @@ jobs:
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
-          working-directory: ./rstudio_project
+          working-directory: ./rstudio_project/renv
         env:
           RENV_CONFIG_REPOS_OVERRIDE: https://packagemanager.rstudio.com/all/latest
         
