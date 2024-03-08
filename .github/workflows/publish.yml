@@ -16,19 +16,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
-        
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-      
-
-      - name: Render and Publish
-        uses: quarto-dev/quarto-actions/publish@v2
-        with:
-          target: gh-pages
-          path: ./rstudio_project
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
        
           
       - name: Install R
@@ -52,4 +39,16 @@ jobs:
           cache: 'pip'
       - run: pip install jupyter
       - run: pip install -r requirements.txt
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+      
+
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+          path: ./rstudio_project
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
