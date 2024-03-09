@@ -1,0 +1,77 @@
+---
+title: "Dockerizing the Application"
+format: html
+---
+
+# Dockerizing the Application
+
+## Introduction
+
+This chapter focuses on containerizing the "I Love Penguins" project using Docker. Dockerizing the application ensures a consistent environment across different systems, making deployment and scaling more manageable.
+
+## Prerequisites
+
+- Docker installed on your machine. 
+- Basic understanding of Docker concepts like images, containers, and Dockerfiles.
+
+## Understanding Docker
+
+Docker allows you to package an application with all of its dependencies into a standardized unit called a container. Containers are lightweight, standalone, and executable software packages that include everything needed to run an application: code, runtime, system tools, system libraries, and settings.
+
+## Creating a Dockerfile
+
+A Dockerfile is a script composed of various commands and arguments that serve as instructions for building a Docker image.
+
+### Building Docker for API
+
+To build the Docker container for the API, run the following command in your working directory
+
+```
+docker build -t penguin-model-api ./api
+```
+### Building Docker for Shiny App
+
+To build the Docker container for the Shiny app, use:
+
+```
+ docker build -t penguin-model-api ./shiny_app
+```
+
+## Using Docker Networking
+
+Docker Networking is crucial for enabling communication between different containers. Here's how to set it up:
+
+### Creating a Custom Network
+
+First, create a custom network named `penguin-network`:
+```
+docker network create penguin-network
+```
+
+Now, you can run both the API and Shiny app containers on this network. Make sure you are running in two terminals:
+
+1. **API Container**:
+```
+docker run --rm -t   -p 8080:8080   --name penguin-model-api   \
+--mount type=bind,source="$(pwd)"/data,target="/data" \
+--network=penguin-network   penguin-model-api
+```
+2. **Shiny App Container**:
+```
+docker run -p 8080:8080 --network=penguin-network  penguin-shinyapp
+```
+
+---
+
+## Next Steps
+
+Having containerized our application, we are now ready for the final step: **Deployment**. Let's learn how to deploy our application to a server or cloud platform.
+
+[Proceed to Deployment](deployment.html)
+
+
+
+
+
+
+

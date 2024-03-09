@@ -8,8 +8,6 @@ Building Docker for API
 docker build -t penguin-model-api .
 ```
 
-
-
 Running Docker for API
 ```
 docker run --rm -t   -p 8080:8080   --name penguin-model-api   \
@@ -36,3 +34,9 @@ docker run --rm -t   -p 8080:8080   --name penguin-model-api   \
 # Run  Shiny container
 docker run -p 8080:8080 --network=penguin-network  penguin-shinyapp
 ```
+
+This setup ensures that both containers can communicate with each other, maintaining consistency and ease of deployment.
+
+## Conclusion
+
+By Dockerizing the "I Love Penguins" project, we ensure a streamlined workflow and a consistent environment, making our application more robust and easier to deploy.

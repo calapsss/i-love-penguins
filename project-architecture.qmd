@@ -1,0 +1,74 @@
+---
+title: "Project Architecture"
+format: html
+---
+
+# Project Architecture
+
+## Introduction
+
+The "I Love Penguins" project features a modular, scalable architecture, integrating various technologies tailored for data science and DevOps.
+
+## Directory Structure Overview
+
+The project includes key directories and files each serving specific functions:
+
+- **`api/`**: Contains the API server code and Dockerfile. This server interfaces with DuckDB for predictions using Vetiver models.
+- **`shiny_app/`**: Houses the Shiny application for data visualization and user interaction.
+- **`data/model/`**: Stores different versions of the Penguin model.
+- **`_quarto.yml` and other `.qmd` files**: For generating the project documentation.
+- **`my-db.duckdb`**: The DuckDB database file used by the API.
+
+## Component Interaction
+
+- **API and Database**: The API interacts with the DuckDB database for data storage and retrieval.
+- **Shiny App and API**: The Shiny app communicates with the API for data processing and visualization.
+- **Model Management**: The models are managed and versioned in `data/model/`.
+
+## Database Integration
+
+The project uses DuckDB, an embedded SQL database, for efficient data management. The database is set up and managed through the R script detailed in `database.qmd`. This file includes steps such as:
+
+- Connecting to DuckDB.
+- Writing data to the database.
+- Properly shutting down the connection.
+
+For more details on the database setup and management, refer to the [Database Management chapter](./database.qmd).
+
+##Model Creation and Analysis
+
+- **Explore the Data**:The `eda.qmd` file illustrates the exploratory data analysis (EDA) and the initial creation of the model. This includes:
+  - Importing and connecting to the database.
+  - Summarizing data by species and sex.
+  - Visualizing relationships in the data using `ggplot2`.
+
+For detailed insights into the model creation process, refer to the [EDA and Model Creation chapter](./eda.qmd).
+
+- **Model Development**: The `model.qmd` file outlines the development and storage of the predictive model. Key steps include:
+  - Data retrieval from DuckDB and preprocessing.
+  - Model definition and fitting using scikit-learn.
+  - Evaluation of model performance.
+  - Storing the model with `vetiver` and `pins` for versioning and API deployment.
+
+For a detailed walkthrough of the model development process, please see the [Model Development chapter](./model.qmd).
+
+
+
+## Technology Stack
+
+- **Docker**: For containerizing the API and Shiny app.
+- **DuckDB**: An embedded SQL database.
+- **ShinyApp**: For building interactive web applications.
+- **Vetiver**: For versioning and deploying machine learning models.
+
+## Conclusion
+
+This architecture promotes a clear separation of responsibilities and modular development. Understanding this structure will help in effectively navigating and contributing to the project. Next, we will explore the development and management of machine learning models.
+
+---
+
+## Next Steps
+
+After understanding the architecture of our project, let's move to **Creating the Model and Storing** it. We'll look at how our model is built and managed.
+
+[Proceed to Creating the Model and Storing](model.html)

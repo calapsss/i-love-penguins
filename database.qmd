@@ -1,3 +1,9 @@
+---
+title: "Database Management with DuckDB"
+format: html
+---
+
+# Database Management with DuckDB
 
 ## Data to DB
 ```{r db-init}

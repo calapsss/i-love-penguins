@@ -14,7 +14,7 @@ from sklearn import preprocessing
 ```
 
 ## Get Data
-
+Here, we connect to a DuckDB database to load our data, fetch the penguins table, and drop any rows with missing values. Finally, we display the first three rows of the dataframe.
 
 ```{python load-df-from-db}
 import duckdb
@@ -26,7 +26,7 @@ df.head(3)
 ```
 
 ## Define Model and Fit
-
+In this section, we prepare our features (X) and target variable (y). Categorical variables are one-hot encoded. The linear regression model is then fitted with this data.
 
 ```{python model-def}
 X = get_dummies(df[['bill_length_mm', 'species', 'sex']], drop_first = True)
@@ -36,7 +36,7 @@ model = LinearRegression().fit(X, y)
 ```
 
 ## Get some information
-
+After fitting the model, we print out the model's R-squared value, the intercept, the names of the columns used, and the model's coefficients to understand its performance and the influence of each feature.
 
 ```{python model-info}
 print(f"R^2 {model.score(X,y)}")
@@ -47,6 +47,7 @@ print(f"Coefficients {model.coef_}")
 
 
 ## Store Model
+This section deals with storing the model. We use vetiver and pins for model management and versioning. The model is stored in a designated folder, ensuring it can be easily accessed and used later.
 ```{python store-model}
 from vetiver import *
 import pins
@@ -56,13 +57,14 @@ vetiver_pin_write(b, v)
 ```
 
 
-## API
-```{python api}
-app = VetiverAPI(v, check_prototype=True)
 
-```
 
-## RUN API
-```{python api-run}
-#app.run(port=8080)
-```
+
+---
+
+## Next Steps
+
+Now that our model is ready and stored, the next phase is **Setting Up the API**. We'll see how to prepare our API for interacting with the model.
+
+[Proceed to Setup API](setup-api.html)
+

@@ -1,10 +1,33 @@
 ---
-title: "I Love Penguins"
+title: "I Love Penguins: A DevOps Journey for Data Scientists"
+format: html
 ---
 
-**Starter DevOps for Projects Data Science**
+# Welcome to the "I Love Penguins" Project
 
+## Introduction
 
+Welcome to the "I Love Penguins" project! This journey is inspired by the principles and teachings from [do4ds.com](https://do4ds.com), and it's here to guide you through the essential DevOps practices tailored specifically for Data Scientists. Our goal is to bridge the gap between data science and DevOps, showing how these disciplines can effectively work together.
 
+Throughout this project, we will explore the usage of cutting-edge tools and technologies such as Docker, DuckDB, ShinyApp, and Vetiver. These tools are selected not just for their effectiveness but also for their relevance in the modern data science workflow. 
 
+## Who Is This For?
+
+This documentation is crafted for Junior Data Scientists, students, and specifically for students of Math 378 at the US Air Force Academy. Whether you're just starting out in data science or looking to expand your skills in DevOps, this project is for you.
+
+## What Will You Learn?
+
+1. **Setting Up Dev Environment**: We'll start by setting up a development environment that is both robust and replicable.
+
+2. **The Project Architecture**: Understanding the architecture of a project is key. We'll delve into how our project is structured and why.
+
+3. **Creating the Model and Storing**: Dive into model creation and explore how we manage data effectively using DuckDB.
+
+4. **Dockerizing**: Unravel the complexities of Docker and how it can be used to containerize and streamline your data science workflows.
+
+5. **Deployment**: Finally, we'll discuss deployment strategies and best practices (content to be added later).
+
+## Let's Dive In!
+
+Prepare to embark on a journey that will enhance your understanding and skills in integrating DevOps practices within the realm of data science. Let's explore, learn, and grow together in the fascinating world of "I Love Penguins"!
 

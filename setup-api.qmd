@@ -1,0 +1,91 @@
+---
+title: "Setting Up the API"
+format: html
+---
+
+# Setting Up the API
+
+## Introduction
+
+This section guides you through setting up the virtual environment for the API in the "I Love Penguins" project and running it for testing. We'll also discuss the functionality of the `app.py` script.
+
+## Prerequisites
+
+- Python 3.10 installed on your machine
+
+## API Overview
+
+The API uses Python, featuring libraries like `vetiver` and `pins`, to serve machine learning model predictions. The primary script for the API is `app.py`.
+
+## Setting Up the Virtual Environment
+
+Creating a virtual environment is essential for managing dependencies and ensuring that the API runs in an isolated space.
+
+### Creating the Environment
+
+Navigate to the API directory within the project and execute the following command:
+
+`python3 -m venv .venv`
+
+This command creates a new virtual environment named `env`.
+
+### Activating the Environment
+
+Activate the virtual environment:
+
+On Windows:
+
+`.venv\Scripts\activate`
+
+On Unix or MacOS:
+
+`source .venv/bin/activate`
+
+### Installing Dependencies
+
+Install the required Python packages using:
+
+`pip install -r requirements.txt`
+
+## Running the API for Testing
+
+With the virtual environment set up and dependencies installed, you can now run the API:
+
+In your command line run 
+```
+uvicorn app.app:api --host 0.0.0.0 --port 3000
+```
+
+
+After executing this command, the API should start, and you can test it as needed.If you go to your browser and visit 127.0.0.1 or your localhost, you should see the api docs.
+
+## Understanding the Code in `app.py`
+
+The `app.py` script initializes and configures a Vetiver API. It loads a machine learning model managed with `vetiver` and `pins`. The model is used to make predictions based on the input data it receives through API requests. The code is designed to be scalable and easily integrated with Docker for containerized deployments.
+
+```
+from vetiver import *
+import vetiver
+import pins
+
+model_name = 'penguin_model'
+version = '20240309T005955Z-565d5'
+dir = '/data/model/'
+b = pins.board_folder(dir, allow_pickle_read=True)
+
+v = VetiverModel.from_pin(b, model_name, version)
+print(v)
+vetiver_api = vetiver.VetiverAPI(v)
+api = vetiver_api.app
+```
+
+---
+
+## Next Steps
+
+With our API set up, the following step is to **Dockerize** our application. This chapter will guide you through the process of containerizing our API and Shiny app.
+
+[Proceed to Dockerizing](dockerizing.html)
+
+
+
