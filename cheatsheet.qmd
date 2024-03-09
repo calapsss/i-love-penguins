@@ -13,5 +13,26 @@ docker build -t penguin-model-api .
 Running Docker for API
 ```
 docker run --rm -t   -p 8080:8080   --name penguin-model-api   \
---mount type=bind,source="$(pwd)"/data,target="/data"   penguin-model-api
+--mount type=bind,source="$(pwd)"/data,target="/data" \
+--network=penguin-network   penguin-model-api
+```
+
+Running Docker for Shiny APP
+```
+ docker run -p 8080:8080 --network=penguin-network  penguin-shinyapp
+```
+
+## When running two different docker containers
+We will use Docker Networking.
+```
+# Create a custom network
+docker network create penguin-network
+
+# Run  API container
+docker run --rm -t   -p 8080:8080   --name penguin-model-api   \
+--mount type=bind,source="$(pwd)"/data,target="/data" \
+--network=penguin-network   penguin-model-api
+
+# Run  Shiny container
+docker run -p 8080:8080 --network=penguin-network  penguin-shinyapp
 ```

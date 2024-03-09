@@ -2,8 +2,8 @@ from shiny import App, render, ui, reactive
 import requests
 import logging
 
-
-api_url = 'http://127.0.0.1:8080/predict'
+#change depending on port
+api_url = 'http://penguin-model-api:3000/predict'
 
 # Configure the log object
 logging.basicConfig(
@@ -68,6 +68,3 @@ def server(input, output, session):
         return f"{round(pred())}"
 
 app = App(app_ui, server)
-
-if __name__ == "__main__":
-    app.run()

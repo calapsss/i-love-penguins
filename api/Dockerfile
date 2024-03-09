@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir --upgrade -r /requirements.txt
 COPY app.py /vetiver/app/app.py
 
 # expose port
-EXPOSE 8080
+EXPOSE 3000
 
 # run vetiver API
-CMD ["uvicorn", "app.app:api", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "app.app:api", "--host", "0.0.0.0", "--port", "3000"]
