@@ -60,56 +60,88 @@
     "href": "project-architecture.html",
     "title": "Project Architecture",
     "section": "",
-    "text": "The “I Love Penguins” project features a modular, scalable architecture, integrating various technologies tailored for data science and DevOps.\n\n\n\nThe project includes key directories and files each serving specific functions:\n\napi/: Contains the API server code and Dockerfile. This server interfaces with DuckDB for predictions using Vetiver models.\nshiny_app/: Houses the Shiny application for data visualization and user interaction.\ndata/model/: Stores different versions of the Penguin model.\n_quarto.yml and other .qmd files: For generating the project documentation.\nmy-db.duckdb: The DuckDB database file used by the API.\n\n\n\n\n\nAPI and Database: The API interacts with the DuckDB database for data storage and retrieval.\nShiny App and API: The Shiny app communicates with the API for data processing and visualization.\nModel Management: The models are managed and versioned in data/model/.\n\n\n\n\nThe project uses DuckDB, an embedded SQL database, for efficient data management. The database is set up and managed through the R script detailed in database.qmd. This file includes steps such as:\n\nConnecting to DuckDB.\nWriting data to the database.\nProperly shutting down the connection.\n\nFor more details on the database setup and management, refer to the Database Management chapter.\n##Model Creation and Analysis\n\nExplore the Data:The eda.qmd file illustrates the exploratory data analysis (EDA) and the initial creation of the model. This includes:\n\nImporting and connecting to the database.\nSummarizing data by species and sex.\nVisualizing relationships in the data using ggplot2.\n\n\nFor detailed insights into the model creation process, refer to the EDA and Model Creation chapter.\n\nModel Development: The model.qmd file outlines the development and storage of the predictive model. Key steps include:\n\nData retrieval from DuckDB and preprocessing.\nModel definition and fitting using scikit-learn.\nEvaluation of model performance.\nStoring the model with vetiver and pins for versioning and API deployment.\n\n\nFor a detailed walkthrough of the model development process, please see the Model Development chapter.\n\n\n\n\nDocker: For containerizing the API and Shiny app.\nDuckDB: An embedded SQL database.\nShinyApp: For building interactive web applications.\nVetiver: For versioning and deploying machine learning models.\n\n\n\n\nThis architecture promotes a clear separation of responsibilities and modular development. Understanding this structure will help in effectively navigating and contributing to the project. Next, we will explore the development and management of machine learning models.\n\n\n\n\nAfter understanding the architecture of our project, let’s move to Creating the Model and Storing it. We’ll look at how our model is built and managed.\nProceed to Creating the Model and Storing"
+    "text": "The “I Love Penguins” project features a modular, scalable architecture, integrating various technologies tailored for data science and DevOps.\n\n\n\nThe project includes key directories and files each serving specific functions:\n\napi/: Contains the API server code and Dockerfile. This server interfaces with DuckDB for predictions using Vetiver models.\nshiny_app/: Houses the Shiny application for data visualization and user interaction.\ndata/model/: Stores different versions of the Penguin model.\n_quarto.yml and other .qmd files: For generating the project documentation.\nmy-db.duckdb: The DuckDB database file used by the API.\n\n\n\n\n\nAPI and Database: The API interacts with the DuckDB database for data storage and retrieval.\nShiny App and API: The Shiny app communicates with the API for data processing and visualization.\nModel Management: The models are managed and versioned in data/model/.\n\n\n\n\nThe project uses DuckDB, an embedded SQL database, for efficient data management. The database is set up and managed through the R script detailed in database.qmd. This file includes steps such as:\n\nConnecting to DuckDB.\nWriting data to the database.\nProperly shutting down the connection.\n\nFor more details on the database setup and management, refer to the Database Management chapter.\n##Model Creation and Analysis\n\nExplore the Data:The eda.qmd file illustrates the exploratory data analysis (EDA) and the initial creation of the model. This includes:\n\nImporting and connecting to the database.\nSummarizing data by species and sex.\nVisualizing relationships in the data using ggplot2.\n\n\nFor detailed insights into the model creation process, refer to the EDA and Model Creation chapter.\n\nModel Development: The model.qmd file outlines the development and storage of the predictive model. Key steps include:\n\nData retrieval from DuckDB and preprocessing.\nModel definition and fitting using scikit-learn.\nEvaluation of model performance.\nStoring the model with vetiver and pins for versioning and API deployment.\n\n\nFor a detailed walkthrough of the model development process, please see the Model Development chapter.\n\n\n\n\nDocker: For containerizing the API and Shiny app.\nDuckDB: An embedded SQL database.\nShinyApp: For building interactive web applications.\nVetiver: For versioning and deploying machine learning models.\n\n\n\n\nThis architecture promotes a clear separation of responsibilities and modular development. Understanding this structure will help in effectively navigating and contributing to the project. Next, we will explore the development and management of machine learning models.\n\n\n\n\nAfter understanding the architecture of our project, let’s move to Creating the Model and Storing it. We’ll look at how our model is built and managed.\nProceed to Creating the Model and Storing",
+    "crumbs": [
+      "Home",
+      "The Project Architecture"
+    ]
   },
   {
     "objectID": "project-architecture.html#introduction",
     "href": "project-architecture.html#introduction",
     "title": "Project Architecture",
     "section": "",
-    "text": "The “I Love Penguins” project features a modular, scalable architecture, integrating various technologies tailored for data science and DevOps."
+    "text": "The “I Love Penguins” project features a modular, scalable architecture, integrating various technologies tailored for data science and DevOps.",
+    "crumbs": [
+      "Home",
+      "The Project Architecture"
+    ]
   },
   {
     "objectID": "project-architecture.html#directory-structure-overview",
     "href": "project-architecture.html#directory-structure-overview",
     "title": "Project Architecture",
     "section": "",
-    "text": "The project includes key directories and files each serving specific functions:\n\napi/: Contains the API server code and Dockerfile. This server interfaces with DuckDB for predictions using Vetiver models.\nshiny_app/: Houses the Shiny application for data visualization and user interaction.\ndata/model/: Stores different versions of the Penguin model.\n_quarto.yml and other .qmd files: For generating the project documentation.\nmy-db.duckdb: The DuckDB database file used by the API."
+    "text": "The project includes key directories and files each serving specific functions:\n\napi/: Contains the API server code and Dockerfile. This server interfaces with DuckDB for predictions using Vetiver models.\nshiny_app/: Houses the Shiny application for data visualization and user interaction.\ndata/model/: Stores different versions of the Penguin model.\n_quarto.yml and other .qmd files: For generating the project documentation.\nmy-db.duckdb: The DuckDB database file used by the API.",
+    "crumbs": [
+      "Home",
+      "The Project Architecture"
+    ]
   },
   {
     "objectID": "project-architecture.html#component-interaction",
     "href": "project-architecture.html#component-interaction",
     "title": "Project Architecture",
     "section": "",
-    "text": "API and Database: The API interacts with the DuckDB database for data storage and retrieval.\nShiny App and API: The Shiny app communicates with the API for data processing and visualization.\nModel Management: The models are managed and versioned in data/model/."
+    "text": "API and Database: The API interacts with the DuckDB database for data storage and retrieval.\nShiny App and API: The Shiny app communicates with the API for data processing and visualization.\nModel Management: The models are managed and versioned in data/model/.",
+    "crumbs": [
+      "Home",
+      "The Project Architecture"
+    ]
   },
   {
     "objectID": "project-architecture.html#database-integration",
     "href": "project-architecture.html#database-integration",
     "title": "Project Architecture",
     "section": "",
-    "text": "The project uses DuckDB, an embedded SQL database, for efficient data management. The database is set up and managed through the R script detailed in database.qmd. This file includes steps such as:\n\nConnecting to DuckDB.\nWriting data to the database.\nProperly shutting down the connection.\n\nFor more details on the database setup and management, refer to the Database Management chapter.\n##Model Creation and Analysis\n\nExplore the Data:The eda.qmd file illustrates the exploratory data analysis (EDA) and the initial creation of the model. This includes:\n\nImporting and connecting to the database.\nSummarizing data by species and sex.\nVisualizing relationships in the data using ggplot2.\n\n\nFor detailed insights into the model creation process, refer to the EDA and Model Creation chapter.\n\nModel Development: The model.qmd file outlines the development and storage of the predictive model. Key steps include:\n\nData retrieval from DuckDB and preprocessing.\nModel definition and fitting using scikit-learn.\nEvaluation of model performance.\nStoring the model with vetiver and pins for versioning and API deployment.\n\n\nFor a detailed walkthrough of the model development process, please see the Model Development chapter."
+    "text": "The project uses DuckDB, an embedded SQL database, for efficient data management. The database is set up and managed through the R script detailed in database.qmd. This file includes steps such as:\n\nConnecting to DuckDB.\nWriting data to the database.\nProperly shutting down the connection.\n\nFor more details on the database setup and management, refer to the Database Management chapter.\n##Model Creation and Analysis\n\nExplore the Data:The eda.qmd file illustrates the exploratory data analysis (EDA) and the initial creation of the model. This includes:\n\nImporting and connecting to the database.\nSummarizing data by species and sex.\nVisualizing relationships in the data using ggplot2.\n\n\nFor detailed insights into the model creation process, refer to the EDA and Model Creation chapter.\n\nModel Development: The model.qmd file outlines the development and storage of the predictive model. Key steps include:\n\nData retrieval from DuckDB and preprocessing.\nModel definition and fitting using scikit-learn.\nEvaluation of model performance.\nStoring the model with vetiver and pins for versioning and API deployment.\n\n\nFor a detailed walkthrough of the model development process, please see the Model Development chapter.",
+    "crumbs": [
+      "Home",
+      "The Project Architecture"
+    ]
   },
   {
     "objectID": "project-architecture.html#technology-stack",
     "href": "project-architecture.html#technology-stack",
     "title": "Project Architecture",
     "section": "",
-    "text": "Docker: For containerizing the API and Shiny app.\nDuckDB: An embedded SQL database.\nShinyApp: For building interactive web applications.\nVetiver: For versioning and deploying machine learning models."
+    "text": "Docker: For containerizing the API and Shiny app.\nDuckDB: An embedded SQL database.\nShinyApp: For building interactive web applications.\nVetiver: For versioning and deploying machine learning models.",
+    "crumbs": [
+      "Home",
+      "The Project Architecture"
+    ]
   },
   {
     "objectID": "project-architecture.html#conclusion",
     "href": "project-architecture.html#conclusion",
     "title": "Project Architecture",
     "section": "",
-    "text": "This architecture promotes a clear separation of responsibilities and modular development. Understanding this structure will help in effectively navigating and contributing to the project. Next, we will explore the development and management of machine learning models."
+    "text": "This architecture promotes a clear separation of responsibilities and modular development. Understanding this structure will help in effectively navigating and contributing to the project. Next, we will explore the development and management of machine learning models.",
+    "crumbs": [
+      "Home",
+      "The Project Architecture"
+    ]
   },
   {
     "objectID": "project-architecture.html#next-steps",
     "href": "project-architecture.html#next-steps",
     "title": "Project Architecture",
     "section": "",
-    "text": "After understanding the architecture of our project, let’s move to Creating the Model and Storing it. We’ll look at how our model is built and managed.\nProceed to Creating the Model and Storing"
+    "text": "After understanding the architecture of our project, let’s move to Creating the Model and Storing it. We’ll look at how our model is built and managed.\nProceed to Creating the Model and Storing",
+    "crumbs": [
+      "Home",
+      "The Project Architecture"
+    ]
   },
   {
     "objectID": "cheatsheet.html",
@@ -144,105 +176,165 @@
     "href": "setup-api.html",
     "title": "Setting Up the API",
     "section": "",
-    "text": "This section guides you through setting up the virtual environment for the API in the “I Love Penguins” project and running it for testing. We’ll also discuss the functionality of the app.py script.\n\n\n\n\nPython 3.10 installed on your machine\n\n\n\n\nThe API uses Python, featuring libraries like vetiver and pins, to serve machine learning model predictions. The primary script for the API is app.py.\n\n\n\nCreating a virtual environment is essential for managing dependencies and ensuring that the API runs in an isolated space.\n\n\nNavigate to the API directory within the project and execute the following command:\npython3 -m venv .venv\nThis command creates a new virtual environment named env.\n\n\n\nActivate the virtual environment:\nOn Windows:\n.venv\\Scripts\\activate\nOn Unix or MacOS:\nsource .venv/bin/activate\n\n\n\nInstall the required Python packages using:\npip install -r requirements.txt\n\n\n\n\nWith the virtual environment set up and dependencies installed, you can now run the API:\nIn your command line run\nuvicorn app.app:api --host 0.0.0.0 --port 3000\nAfter executing this command, the API should start, and you can test it as needed.If you go to your browser and visit 127.0.0.1 or your localhost, you should see the api docs.\n\n\n\nThe app.py script initializes and configures a Vetiver API. It loads a machine learning model managed with vetiver and pins. The model is used to make predictions based on the input data it receives through API requests. The code is designed to be scalable and easily integrated with Docker for containerized deployments.\nfrom vetiver import *\nimport vetiver\nimport pins\n\nmodel_name = 'penguin_model'\nversion = '20240309T005955Z-565d5'\ndir = '/data/model/'\nb = pins.board_folder(dir, allow_pickle_read=True)\n\nv = VetiverModel.from_pin(b, model_name, version)\nprint(v)\nvetiver_api = vetiver.VetiverAPI(v)\napi = vetiver_api.app\n\n\n\n\nWith our API set up, the following step is to Dockerize our application. This chapter will guide you through the process of containerizing our API and Shiny app.\nProceed to Dockerizing"
+    "text": "This section guides you through setting up the virtual environment for the API in the “I Love Penguins” project and running it for testing. We’ll also discuss the functionality of the app.py script.\n\n\n\n\nPython 3.10 installed on your machine\n\n\n\n\nThe API uses Python, featuring libraries like vetiver and pins, to serve machine learning model predictions. The primary script for the API is app.py.\n\n\n\nCreating a virtual environment is essential for managing dependencies and ensuring that the API runs in an isolated space.\n\n\nNavigate to the API directory within the project and execute the following command:\npython3 -m venv .venv\nThis command creates a new virtual environment named env.\n\n\n\nActivate the virtual environment:\nOn Windows:\n.venv\\Scripts\\activate\nOn Unix or MacOS:\nsource .venv/bin/activate\n\n\n\nInstall the required Python packages using:\npip install -r requirements.txt\n\n\n\n\nWith the virtual environment set up and dependencies installed, you can now run the API:\nIn your command line run\nuvicorn app.app:api --host 0.0.0.0 --port 3000\nAfter executing this command, the API should start, and you can test it as needed.If you go to your browser and visit 127.0.0.1 or your localhost, you should see the api docs.\n\n\n\nThe app.py script initializes and configures a Vetiver API. It loads a machine learning model managed with vetiver and pins. The model is used to make predictions based on the input data it receives through API requests. The code is designed to be scalable and easily integrated with Docker for containerized deployments.\nfrom vetiver import *\nimport vetiver\nimport pins\n\nmodel_name = 'penguin_model'\nversion = '20240309T005955Z-565d5'\ndir = '/data/model/'\nb = pins.board_folder(dir, allow_pickle_read=True)\n\nv = VetiverModel.from_pin(b, model_name, version)\nprint(v)\nvetiver_api = vetiver.VetiverAPI(v)\napi = vetiver_api.app\n\n\n\n\nWith our API set up, the following step is to Dockerize our application. This chapter will guide you through the process of containerizing our API and Shiny app.\nProceed to Dockerizing",
+    "crumbs": [
+      "Home",
+      "Setup API"
+    ]
   },
   {
     "objectID": "setup-api.html#introduction",
     "href": "setup-api.html#introduction",
     "title": "Setting Up the API",
     "section": "",
-    "text": "This section guides you through setting up the virtual environment for the API in the “I Love Penguins” project and running it for testing. We’ll also discuss the functionality of the app.py script."
+    "text": "This section guides you through setting up the virtual environment for the API in the “I Love Penguins” project and running it for testing. We’ll also discuss the functionality of the app.py script.",
+    "crumbs": [
+      "Home",
+      "Setup API"
+    ]
   },
   {
     "objectID": "setup-api.html#prerequisites",
     "href": "setup-api.html#prerequisites",
     "title": "Setting Up the API",
     "section": "",
-    "text": "Python 3.10 installed on your machine"
+    "text": "Python 3.10 installed on your machine",
+    "crumbs": [
+      "Home",
+      "Setup API"
+    ]
   },
   {
     "objectID": "setup-api.html#api-overview",
     "href": "setup-api.html#api-overview",
     "title": "Setting Up the API",
     "section": "",
-    "text": "The API uses Python, featuring libraries like vetiver and pins, to serve machine learning model predictions. The primary script for the API is app.py."
+    "text": "The API uses Python, featuring libraries like vetiver and pins, to serve machine learning model predictions. The primary script for the API is app.py.",
+    "crumbs": [
+      "Home",
+      "Setup API"
+    ]
   },
   {
     "objectID": "setup-api.html#setting-up-the-virtual-environment",
     "href": "setup-api.html#setting-up-the-virtual-environment",
     "title": "Setting Up the API",
     "section": "",
-    "text": "Creating a virtual environment is essential for managing dependencies and ensuring that the API runs in an isolated space.\n\n\nNavigate to the API directory within the project and execute the following command:\npython3 -m venv .venv\nThis command creates a new virtual environment named env.\n\n\n\nActivate the virtual environment:\nOn Windows:\n.venv\\Scripts\\activate\nOn Unix or MacOS:\nsource .venv/bin/activate\n\n\n\nInstall the required Python packages using:\npip install -r requirements.txt"
+    "text": "Creating a virtual environment is essential for managing dependencies and ensuring that the API runs in an isolated space.\n\n\nNavigate to the API directory within the project and execute the following command:\npython3 -m venv .venv\nThis command creates a new virtual environment named env.\n\n\n\nActivate the virtual environment:\nOn Windows:\n.venv\\Scripts\\activate\nOn Unix or MacOS:\nsource .venv/bin/activate\n\n\n\nInstall the required Python packages using:\npip install -r requirements.txt",
+    "crumbs": [
+      "Home",
+      "Setup API"
+    ]
   },
   {
     "objectID": "setup-api.html#running-the-api-for-testing",
     "href": "setup-api.html#running-the-api-for-testing",
     "title": "Setting Up the API",
     "section": "",
-    "text": "With the virtual environment set up and dependencies installed, you can now run the API:\nIn your command line run\nuvicorn app.app:api --host 0.0.0.0 --port 3000\nAfter executing this command, the API should start, and you can test it as needed.If you go to your browser and visit 127.0.0.1 or your localhost, you should see the api docs."
+    "text": "With the virtual environment set up and dependencies installed, you can now run the API:\nIn your command line run\nuvicorn app.app:api --host 0.0.0.0 --port 3000\nAfter executing this command, the API should start, and you can test it as needed.If you go to your browser and visit 127.0.0.1 or your localhost, you should see the api docs.",
+    "crumbs": [
+      "Home",
+      "Setup API"
+    ]
   },
   {
     "objectID": "setup-api.html#understanding-the-code-in-app.py",
     "href": "setup-api.html#understanding-the-code-in-app.py",
     "title": "Setting Up the API",
     "section": "",
-    "text": "The app.py script initializes and configures a Vetiver API. It loads a machine learning model managed with vetiver and pins. The model is used to make predictions based on the input data it receives through API requests. The code is designed to be scalable and easily integrated with Docker for containerized deployments.\nfrom vetiver import *\nimport vetiver\nimport pins\n\nmodel_name = 'penguin_model'\nversion = '20240309T005955Z-565d5'\ndir = '/data/model/'\nb = pins.board_folder(dir, allow_pickle_read=True)\n\nv = VetiverModel.from_pin(b, model_name, version)\nprint(v)\nvetiver_api = vetiver.VetiverAPI(v)\napi = vetiver_api.app"
+    "text": "The app.py script initializes and configures a Vetiver API. It loads a machine learning model managed with vetiver and pins. The model is used to make predictions based on the input data it receives through API requests. The code is designed to be scalable and easily integrated with Docker for containerized deployments.\nfrom vetiver import *\nimport vetiver\nimport pins\n\nmodel_name = 'penguin_model'\nversion = '20240309T005955Z-565d5'\ndir = '/data/model/'\nb = pins.board_folder(dir, allow_pickle_read=True)\n\nv = VetiverModel.from_pin(b, model_name, version)\nprint(v)\nvetiver_api = vetiver.VetiverAPI(v)\napi = vetiver_api.app",
+    "crumbs": [
+      "Home",
+      "Setup API"
+    ]
   },
   {
     "objectID": "setup-api.html#next-steps",
     "href": "setup-api.html#next-steps",
     "title": "Setting Up the API",
     "section": "",
-    "text": "With our API set up, the following step is to Dockerize our application. This chapter will guide you through the process of containerizing our API and Shiny app.\nProceed to Dockerizing"
+    "text": "With our API set up, the following step is to Dockerize our application. This chapter will guide you through the process of containerizing our API and Shiny app.\nProceed to Dockerizing",
+    "crumbs": [
+      "Home",
+      "Setup API"
+    ]
   },
   {
     "objectID": "dockerizing.html",
     "href": "dockerizing.html",
     "title": "Dockerizing the Application",
     "section": "",
-    "text": "This chapter focuses on containerizing the “I Love Penguins” project using Docker. Dockerizing the application ensures a consistent environment across different systems, making deployment and scaling more manageable.\n\n\n\n\nDocker installed on your machine.\nBasic understanding of Docker concepts like images, containers, and Dockerfiles.\n\n\n\n\nDocker allows you to package an application with all of its dependencies into a standardized unit called a container. Containers are lightweight, standalone, and executable software packages that include everything needed to run an application: code, runtime, system tools, system libraries, and settings.\n\n\n\nA Dockerfile is a script composed of various commands and arguments that serve as instructions for building a Docker image.\n\n\nTo build the Docker container for the API, run the following command in your working directory\ndocker build -t penguin-model-api ./api\n\n\n\nTo build the Docker container for the Shiny app, use:\n docker build -t penguin-model-api ./shiny_app\n\n\n\n\nDocker Networking is crucial for enabling communication between different containers. Here’s how to set it up:\n\n\nFirst, create a custom network named penguin-network:\ndocker network create penguin-network\nNow, you can run both the API and Shiny app containers on this network. Make sure you are running in two terminals:\n\nAPI Container:\n\ndocker run --rm -t   -p 8080:8080   --name penguin-model-api   \\\n--mount type=bind,source=\"$(pwd)\"/data,target=\"/data\" \\\n--network=penguin-network   penguin-model-api\n\nShiny App Container:\n\ndocker run -p 8080:8080 --network=penguin-network  penguin-shinyapp\n\n\n\n\n\nHaving containerized our application, we are now ready for the final step: Deployment. Let’s learn how to deploy our application to a server or cloud platform.\nProceed to Deployment"
+    "text": "This chapter focuses on containerizing the “I Love Penguins” project using Docker. Dockerizing the application ensures a consistent environment across different systems, making deployment and scaling more manageable.\n\n\n\n\nDocker installed on your machine.\nBasic understanding of Docker concepts like images, containers, and Dockerfiles.\n\n\n\n\nDocker allows you to package an application with all of its dependencies into a standardized unit called a container. Containers are lightweight, standalone, and executable software packages that include everything needed to run an application: code, runtime, system tools, system libraries, and settings.\n\n\n\nA Dockerfile is a script composed of various commands and arguments that serve as instructions for building a Docker image.\n\n\nTo build the Docker container for the API, run the following command in your working directory\ndocker build -t penguin-model-api ./api\n\n\n\nTo build the Docker container for the Shiny app, use:\n docker build -t penguin-model-api ./shiny_app\n\n\n\n\nDocker Networking is crucial for enabling communication between different containers. Here’s how to set it up:\n\n\nFirst, create a custom network named penguin-network:\ndocker network create penguin-network\nNow, you can run both the API and Shiny app containers on this network. Make sure you are running in two terminals:\n\nAPI Container:\n\ndocker run --rm -t   -p 8080:8080   --name penguin-model-api   \\\n--mount type=bind,source=\"$(pwd)\"/data,target=\"/data\" \\\n--network=penguin-network   penguin-model-api\n\nShiny App Container:\n\ndocker run -p 8080:8080 --network=penguin-network  penguin-shinyapp\n\n\n\n\n\nHaving containerized our application, we are now ready for the final step: Deployment. Let’s learn how to deploy our application to a server or cloud platform.\nProceed to Deployment",
+    "crumbs": [
+      "Home",
+      "Dockerizing"
+    ]
   },
   {
     "objectID": "dockerizing.html#introduction",
     "href": "dockerizing.html#introduction",
     "title": "Dockerizing the Application",
     "section": "",
-    "text": "This chapter focuses on containerizing the “I Love Penguins” project using Docker. Dockerizing the application ensures a consistent environment across different systems, making deployment and scaling more manageable."
+    "text": "This chapter focuses on containerizing the “I Love Penguins” project using Docker. Dockerizing the application ensures a consistent environment across different systems, making deployment and scaling more manageable.",
+    "crumbs": [
+      "Home",
+      "Dockerizing"
+    ]
   },
   {
     "objectID": "dockerizing.html#prerequisites",
     "href": "dockerizing.html#prerequisites",
     "title": "Dockerizing the Application",
     "section": "",
-    "text": "Docker installed on your machine.\nBasic understanding of Docker concepts like images, containers, and Dockerfiles."
+    "text": "Docker installed on your machine.\nBasic understanding of Docker concepts like images, containers, and Dockerfiles.",
+    "crumbs": [
+      "Home",
+      "Dockerizing"
+    ]
   },
   {
     "objectID": "dockerizing.html#understanding-docker",
     "href": "dockerizing.html#understanding-docker",
     "title": "Dockerizing the Application",
     "section": "",
-    "text": "Docker allows you to package an application with all of its dependencies into a standardized unit called a container. Containers are lightweight, standalone, and executable software packages that include everything needed to run an application: code, runtime, system tools, system libraries, and settings."
+    "text": "Docker allows you to package an application with all of its dependencies into a standardized unit called a container. Containers are lightweight, standalone, and executable software packages that include everything needed to run an application: code, runtime, system tools, system libraries, and settings.",
+    "crumbs": [
+      "Home",
+      "Dockerizing"
+    ]
   },
   {
     "objectID": "dockerizing.html#creating-a-dockerfile",
     "href": "dockerizing.html#creating-a-dockerfile",
     "title": "Dockerizing the Application",
     "section": "",
-    "text": "A Dockerfile is a script composed of various commands and arguments that serve as instructions for building a Docker image.\n\n\nTo build the Docker container for the API, run the following command in your working directory\ndocker build -t penguin-model-api ./api\n\n\n\nTo build the Docker container for the Shiny app, use:\n docker build -t penguin-model-api ./shiny_app"
+    "text": "A Dockerfile is a script composed of various commands and arguments that serve as instructions for building a Docker image.\n\n\nTo build the Docker container for the API, run the following command in your working directory\ndocker build -t penguin-model-api ./api\n\n\n\nTo build the Docker container for the Shiny app, use:\n docker build -t penguin-model-api ./shiny_app",
+    "crumbs": [
+      "Home",
+      "Dockerizing"
+    ]
   },
   {
     "objectID": "dockerizing.html#using-docker-networking",
     "href": "dockerizing.html#using-docker-networking",
     "title": "Dockerizing the Application",
     "section": "",
-    "text": "Docker Networking is crucial for enabling communication between different containers. Here’s how to set it up:\n\n\nFirst, create a custom network named penguin-network:\ndocker network create penguin-network\nNow, you can run both the API and Shiny app containers on this network. Make sure you are running in two terminals:\n\nAPI Container:\n\ndocker run --rm -t   -p 8080:8080   --name penguin-model-api   \\\n--mount type=bind,source=\"$(pwd)\"/data,target=\"/data\" \\\n--network=penguin-network   penguin-model-api\n\nShiny App Container:\n\ndocker run -p 8080:8080 --network=penguin-network  penguin-shinyapp"
+    "text": "Docker Networking is crucial for enabling communication between different containers. Here’s how to set it up:\n\n\nFirst, create a custom network named penguin-network:\ndocker network create penguin-network\nNow, you can run both the API and Shiny app containers on this network. Make sure you are running in two terminals:\n\nAPI Container:\n\ndocker run --rm -t   -p 8080:8080   --name penguin-model-api   \\\n--mount type=bind,source=\"$(pwd)\"/data,target=\"/data\" \\\n--network=penguin-network   penguin-model-api\n\nShiny App Container:\n\ndocker run -p 8080:8080 --network=penguin-network  penguin-shinyapp",
+    "crumbs": [
+      "Home",
+      "Dockerizing"
+    ]
   },
   {
     "objectID": "dockerizing.html#next-steps",
     "href": "dockerizing.html#next-steps",
     "title": "Dockerizing the Application",
     "section": "",
-    "text": "Having containerized our application, we are now ready for the final step: Deployment. Let’s learn how to deploy our application to a server or cloud platform.\nProceed to Deployment"
+    "text": "Having containerized our application, we are now ready for the final step: Deployment. Let’s learn how to deploy our application to a server or cloud platform.\nProceed to Deployment",
+    "crumbs": [
+      "Home",
+      "Dockerizing"
+    ]
   },
   {
     "objectID": "eda.html",
@@ -270,97 +362,153 @@
     "href": "deployment.html",
     "title": "Deploying the Application",
     "section": "",
-    "text": "To Be Added"
+    "text": "To Be Added",
+    "crumbs": [
+      "Home",
+      "Deployment"
+    ]
   },
   {
     "objectID": "setting-up-dev-environment.html",
     "href": "setting-up-dev-environment.html",
     "title": "Setting Up Development Environment",
     "section": "",
-    "text": "This chapter is dedicated to setting up a robust and efficient development environment for the “I Love Penguins” project. A key aspect of this setup is the use of virtual environments, which are essential for managing dependencies and ensuring that our project remains reproducible over time.\n\n\n\nVirtual environments are isolated spaces where you can install software and dependencies without affecting other projects or the system as a whole. They are crucial for avoiding conflicts between project requirements.\n\n\nPython’s built-in module venv is used to create virtual environments. Here’s how you can set one up:\n\nCreating a Virtual Environment: Run python -m venv &lt;env-name&gt; in your project directory.\nActivating the Environment:\n\nOn Windows, use &lt;env-name&gt;\\Scripts\\activate.\nOn Unix or MacOS, use source &lt;env-name&gt;/bin/activate.\n\nInstalling Dependencies: With the environment activated, use pip install to install your project’s dependencies.\n\n\n\n\nrenv is an R package that provides similar functionality for R projects.\n\nInstalling renv: In an R console, run install.packages(\"renv\").\nInitializing a New Project: Run renv::init() to start a new isolated environment for your project.\nManaging Dependencies: Use renv to install and manage package dependencies.\n\n\n\n\n\nDocker containers can be seen as another form of virtual environment. They encapsulate everything needed to run an application, ensuring consistency across various development and deployment stages.\n\nInstall Docker: Download Docker from the official website and follow the installation guide for your operating system.\nUsing Docker: Learn the basics of building and running Docker containers. We’ll use Docker to containerize various components of our project.\n\n\n\n\n\nDocumenting Dependencies: Always keep a record of your dependencies (e.g., requirements.txt for Python, DESCRIPTION/renv.lock for R).\nConsistency Across Environments: Ensure that your development environment mirrors your production environment as closely as possible. This is where Docker becomes particularly useful.\nRegular Updates: Keep your virtual environments and containers updated to avoid security vulnerabilities.\n\n\n\n\nWith these practices, you’re laying a strong foundation for a reliable and reproducible development workflow. Next, we’ll look into the overall architecture of our project, understanding how these elements fit together.\n\n\n\n\nWith our development environment ready, it’s time to delve into The Project Architecture. This next chapter will explore how our project is structured and designed.\nProceed to The Project Architecture"
+    "text": "This chapter is dedicated to setting up a robust and efficient development environment for the “I Love Penguins” project. A key aspect of this setup is the use of virtual environments, which are essential for managing dependencies and ensuring that our project remains reproducible over time.\n\n\n\nVirtual environments are isolated spaces where you can install software and dependencies without affecting other projects or the system as a whole. They are crucial for avoiding conflicts between project requirements.\n\n\nPython’s built-in module venv is used to create virtual environments. Here’s how you can set one up:\n\nCreating a Virtual Environment: Run python -m venv &lt;env-name&gt; in your project directory.\nActivating the Environment:\n\nOn Windows, use &lt;env-name&gt;\\Scripts\\activate.\nOn Unix or MacOS, use source &lt;env-name&gt;/bin/activate.\n\nInstalling Dependencies: With the environment activated, use pip install to install your project’s dependencies.\n\n\n\n\nrenv is an R package that provides similar functionality for R projects.\n\nInstalling renv: In an R console, run install.packages(\"renv\").\nInitializing a New Project: Run renv::init() to start a new isolated environment for your project.\nManaging Dependencies: Use renv to install and manage package dependencies.\n\n\n\n\n\nDocker containers can be seen as another form of virtual environment. They encapsulate everything needed to run an application, ensuring consistency across various development and deployment stages.\n\nInstall Docker: Download Docker from the official website and follow the installation guide for your operating system.\nUsing Docker: Learn the basics of building and running Docker containers. We’ll use Docker to containerize various components of our project.\n\n\n\n\n\nDocumenting Dependencies: Always keep a record of your dependencies (e.g., requirements.txt for Python, DESCRIPTION/renv.lock for R).\nConsistency Across Environments: Ensure that your development environment mirrors your production environment as closely as possible. This is where Docker becomes particularly useful.\nRegular Updates: Keep your virtual environments and containers updated to avoid security vulnerabilities.\n\n\n\n\nWith these practices, you’re laying a strong foundation for a reliable and reproducible development workflow. Next, we’ll look into the overall architecture of our project, understanding how these elements fit together.\n\n\n\n\nWith our development environment ready, it’s time to delve into The Project Architecture. This next chapter will explore how our project is structured and designed.\nProceed to The Project Architecture",
+    "crumbs": [
+      "Home",
+      "Setting Up Dev Environment"
+    ]
   },
   {
     "objectID": "setting-up-dev-environment.html#introduction",
     "href": "setting-up-dev-environment.html#introduction",
     "title": "Setting Up Development Environment",
     "section": "",
-    "text": "This chapter is dedicated to setting up a robust and efficient development environment for the “I Love Penguins” project. A key aspect of this setup is the use of virtual environments, which are essential for managing dependencies and ensuring that our project remains reproducible over time."
+    "text": "This chapter is dedicated to setting up a robust and efficient development environment for the “I Love Penguins” project. A key aspect of this setup is the use of virtual environments, which are essential for managing dependencies and ensuring that our project remains reproducible over time.",
+    "crumbs": [
+      "Home",
+      "Setting Up Dev Environment"
+    ]
   },
   {
     "objectID": "setting-up-dev-environment.html#understanding-virtual-environments",
     "href": "setting-up-dev-environment.html#understanding-virtual-environments",
     "title": "Setting Up Development Environment",
     "section": "",
-    "text": "Virtual environments are isolated spaces where you can install software and dependencies without affecting other projects or the system as a whole. They are crucial for avoiding conflicts between project requirements.\n\n\nPython’s built-in module venv is used to create virtual environments. Here’s how you can set one up:\n\nCreating a Virtual Environment: Run python -m venv &lt;env-name&gt; in your project directory.\nActivating the Environment:\n\nOn Windows, use &lt;env-name&gt;\\Scripts\\activate.\nOn Unix or MacOS, use source &lt;env-name&gt;/bin/activate.\n\nInstalling Dependencies: With the environment activated, use pip install to install your project’s dependencies.\n\n\n\n\nrenv is an R package that provides similar functionality for R projects.\n\nInstalling renv: In an R console, run install.packages(\"renv\").\nInitializing a New Project: Run renv::init() to start a new isolated environment for your project.\nManaging Dependencies: Use renv to install and manage package dependencies."
+    "text": "Virtual environments are isolated spaces where you can install software and dependencies without affecting other projects or the system as a whole. They are crucial for avoiding conflicts between project requirements.\n\n\nPython’s built-in module venv is used to create virtual environments. Here’s how you can set one up:\n\nCreating a Virtual Environment: Run python -m venv &lt;env-name&gt; in your project directory.\nActivating the Environment:\n\nOn Windows, use &lt;env-name&gt;\\Scripts\\activate.\nOn Unix or MacOS, use source &lt;env-name&gt;/bin/activate.\n\nInstalling Dependencies: With the environment activated, use pip install to install your project’s dependencies.\n\n\n\n\nrenv is an R package that provides similar functionality for R projects.\n\nInstalling renv: In an R console, run install.packages(\"renv\").\nInitializing a New Project: Run renv::init() to start a new isolated environment for your project.\nManaging Dependencies: Use renv to install and manage package dependencies.",
+    "crumbs": [
+      "Home",
+      "Setting Up Dev Environment"
+    ]
   },
   {
     "objectID": "setting-up-dev-environment.html#integrating-docker",
     "href": "setting-up-dev-environment.html#integrating-docker",
     "title": "Setting Up Development Environment",
     "section": "",
-    "text": "Docker containers can be seen as another form of virtual environment. They encapsulate everything needed to run an application, ensuring consistency across various development and deployment stages.\n\nInstall Docker: Download Docker from the official website and follow the installation guide for your operating system.\nUsing Docker: Learn the basics of building and running Docker containers. We’ll use Docker to containerize various components of our project."
+    "text": "Docker containers can be seen as another form of virtual environment. They encapsulate everything needed to run an application, ensuring consistency across various development and deployment stages.\n\nInstall Docker: Download Docker from the official website and follow the installation guide for your operating system.\nUsing Docker: Learn the basics of building and running Docker containers. We’ll use Docker to containerize various components of our project.",
+    "crumbs": [
+      "Home",
+      "Setting Up Dev Environment"
+    ]
   },
   {
     "objectID": "setting-up-dev-environment.html#best-practices",
     "href": "setting-up-dev-environment.html#best-practices",
     "title": "Setting Up Development Environment",
     "section": "",
-    "text": "Documenting Dependencies: Always keep a record of your dependencies (e.g., requirements.txt for Python, DESCRIPTION/renv.lock for R).\nConsistency Across Environments: Ensure that your development environment mirrors your production environment as closely as possible. This is where Docker becomes particularly useful.\nRegular Updates: Keep your virtual environments and containers updated to avoid security vulnerabilities."
+    "text": "Documenting Dependencies: Always keep a record of your dependencies (e.g., requirements.txt for Python, DESCRIPTION/renv.lock for R).\nConsistency Across Environments: Ensure that your development environment mirrors your production environment as closely as possible. This is where Docker becomes particularly useful.\nRegular Updates: Keep your virtual environments and containers updated to avoid security vulnerabilities.",
+    "crumbs": [
+      "Home",
+      "Setting Up Dev Environment"
+    ]
   },
   {
     "objectID": "setting-up-dev-environment.html#conclusion",
     "href": "setting-up-dev-environment.html#conclusion",
     "title": "Setting Up Development Environment",
     "section": "",
-    "text": "With these practices, you’re laying a strong foundation for a reliable and reproducible development workflow. Next, we’ll look into the overall architecture of our project, understanding how these elements fit together."
+    "text": "With these practices, you’re laying a strong foundation for a reliable and reproducible development workflow. Next, we’ll look into the overall architecture of our project, understanding how these elements fit together.",
+    "crumbs": [
+      "Home",
+      "Setting Up Dev Environment"
+    ]
   },
   {
     "objectID": "setting-up-dev-environment.html#next-steps",
     "href": "setting-up-dev-environment.html#next-steps",
     "title": "Setting Up Development Environment",
     "section": "",
-    "text": "With our development environment ready, it’s time to delve into The Project Architecture. This next chapter will explore how our project is structured and designed.\nProceed to The Project Architecture"
+    "text": "With our development environment ready, it’s time to delve into The Project Architecture. This next chapter will explore how our project is structured and designed.\nProceed to The Project Architecture",
+    "crumbs": [
+      "Home",
+      "Setting Up Dev Environment"
+    ]
   },
   {
     "objectID": "model.html",
     "href": "model.html",
     "title": "Model",
     "section": "",
-    "text": "Code\nfrom pandas import get_dummies\nimport numpy as np\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn import preprocessing"
+    "text": "Code\nfrom pandas import get_dummies\nimport numpy as np\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn import preprocessing",
+    "crumbs": [
+      "Home",
+      "Creating the Model and Storing"
+    ]
   },
   {
     "objectID": "model.html#get-data",
     "href": "model.html#get-data",
     "title": "Model",
     "section": "Get Data",
-    "text": "Get Data\nHere, we connect to a DuckDB database to load our data, fetch the penguins table, and drop any rows with missing values. Finally, we display the first three rows of the dataframe.\n\n\nCode\nimport duckdb\ncon = duckdb.connect('my-db.duckdb')\ndf = con.execute(\"SELECT * FROM penguins\").fetchdf().dropna()\ncon.close()\n\ndf.head(3)\n\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007"
+    "text": "Get Data\nHere, we connect to a DuckDB database to load our data, fetch the penguins table, and drop any rows with missing values. Finally, we display the first three rows of the dataframe.\n\n\nCode\nimport duckdb\ncon = duckdb.connect('my-db.duckdb')\ndf = con.execute(\"SELECT * FROM penguins\").fetchdf().dropna()\ncon.close()\n\ndf.head(3)\n\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007",
+    "crumbs": [
+      "Home",
+      "Creating the Model and Storing"
+    ]
   },
   {
     "objectID": "model.html#define-model-and-fit",
     "href": "model.html#define-model-and-fit",
     "title": "Model",
     "section": "Define Model and Fit",
-    "text": "Define Model and Fit\nIn this section, we prepare our features (X) and target variable (y). Categorical variables are one-hot encoded. The linear regression model is then fitted with this data.\n\n\nCode\nX = get_dummies(df[['bill_length_mm', 'species', 'sex']], drop_first = True)\ny = df['body_mass_g']\n\nmodel = LinearRegression().fit(X, y)"
+    "text": "Define Model and Fit\nIn this section, we prepare our features (X) and target variable (y). Categorical variables are one-hot encoded. The linear regression model is then fitted with this data.\n\n\nCode\nX = get_dummies(df[['bill_length_mm', 'species', 'sex']], drop_first = True)\ny = df['body_mass_g']\n\nmodel = LinearRegression().fit(X, y)",
+    "crumbs": [
+      "Home",
+      "Creating the Model and Storing"
+    ]
   },
   {
     "objectID": "model.html#get-some-information",
     "href": "model.html#get-some-information",
     "title": "Model",
     "section": "Get some information",
-    "text": "Get some information\nAfter fitting the model, we print out the model’s R-squared value, the intercept, the names of the columns used, and the model’s coefficients to understand its performance and the influence of each feature.\n\n\nCode\nprint(f\"R^2 {model.score(X,y)}\")\nprint(f\"Intercept {model.intercept_}\")\nprint(f\"Columns {X.columns}\")\nprint(f\"Coefficients {model.coef_}\")\n\n\nR^2 0.8555368759537614\nIntercept 2169.2697209393996\nColumns Index(['bill_length_mm', 'species_Chinstrap', 'species_Gentoo', 'sex_male'], dtype='object')\nCoefficients [  32.53688677 -298.76553447 1094.86739145  547.36692408]"
+    "text": "Get some information\nAfter fitting the model, we print out the model’s R-squared value, the intercept, the names of the columns used, and the model’s coefficients to understand its performance and the influence of each feature.\n\n\nCode\nprint(f\"R^2 {model.score(X,y)}\")\nprint(f\"Intercept {model.intercept_}\")\nprint(f\"Columns {X.columns}\")\nprint(f\"Coefficients {model.coef_}\")\n\n\nR^2 0.8555368759537614\nIntercept 2169.2697209393996\nColumns Index(['bill_length_mm', 'species_Chinstrap', 'species_Gentoo', 'sex_male'], dtype='object')\nCoefficients [  32.53688677 -298.76553447 1094.86739145  547.36692408]",
+    "crumbs": [
+      "Home",
+      "Creating the Model and Storing"
+    ]
   },
   {
     "objectID": "model.html#store-model",
     "href": "model.html#store-model",
     "title": "Model",
     "section": "Store Model",
-    "text": "Store Model\nThis section deals with storing the model. We use vetiver and pins for model management and versioning. The model is stored in a designated folder, ensuring it can be easily accessed and used later.\n\n\nCode\nfrom vetiver import *\nimport pins\nv = VetiverModel(model, model_name='penguin_model', prototype_data=X)\nb = pins.board_folder('data/model', allow_pickle_read=True)\nvetiver_pin_write(b, v)\n\n\nModel Cards provide a framework for transparent, responsible reporting. \n Use the vetiver `.qmd` Quarto template as a place to start, \n with vetiver.model_card()\nWriting pin:\nName: 'penguin_model'\nVersion: 20240309T103634Z-565d5"
+    "text": "Store Model\nThis section deals with storing the model. We use vetiver and pins for model management and versioning. The model is stored in a designated folder, ensuring it can be easily accessed and used later.\n\n\nCode\nfrom vetiver import *\nimport pins\nv = VetiverModel(model, model_name='penguin_model', prototype_data=X)\nb = pins.board_folder('data/model', allow_pickle_read=True)\nvetiver_pin_write(b, v)\n\n\nModel Cards provide a framework for transparent, responsible reporting. \n Use the vetiver `.qmd` Quarto template as a place to start, \n with vetiver.model_card()\nWriting pin:\nName: 'penguin_model'\nVersion: 20240309T104246Z-565d5",
+    "crumbs": [
+      "Home",
+      "Creating the Model and Storing"
+    ]
   },
   {
     "objectID": "model.html#next-steps",
     "href": "model.html#next-steps",
     "title": "Model",
     "section": "Next Steps",
-    "text": "Next Steps\nNow that our model is ready and stored, the next phase is Setting Up the API. We’ll see how to prepare our API for interacting with the model.\nProceed to Setup API"
+    "text": "Next Steps\nNow that our model is ready and stored, the next phase is Setting Up the API. We’ll see how to prepare our API for interacting with the model.\nProceed to Setup API",
+    "crumbs": [
+      "Home",
+      "Creating the Model and Storing"
+    ]
   }
 ]
