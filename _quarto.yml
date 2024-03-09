@@ -2,25 +2,26 @@ project:
   type: website
 
 website:
-  title: "Your Project Documentation"
+  title: "I Love Penguins"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - text: Chapters
-        menu:
-          - href: setting-up-dev-environment.html
-            text: Setting Up Dev Environment
-          - href: project-architecture.html
-            text: The Project Architecture
-          - href: model.html
-            text: Creating the Model and Storing
-          - href: setup-api.html
-            text: Setup API
-          - href: dockerizing.html
-            text: Dockerizing
-          - href: deployment.html
-            text: Deployment
+  sidebar:
+    - header: Chapters
+      contents:
+        - href: setting-up-dev-environment.html
+          text: Setting Up Dev Environment
+        - href: project-architecture.html
+          text: The Project Architecture
+        - href: model.html
+          text: Creating the Model and Storing
+        - href: setup-api.html
+          text: Setup API
+        - href: dockerizing.html
+          text: Dockerizing
+        - href: deployment.html
+          text: Deployment
 
 format:
   html:
