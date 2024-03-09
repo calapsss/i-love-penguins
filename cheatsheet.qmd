@@ -1,0 +1,17 @@
+---
+title: "Cheatsheets"
+---
+
+## Docker
+Building Docker for API
+```
+docker build -t penguin-model-api .
+```
+
+
+
+Running Docker for API
+```
+docker run --rm -t   -p 8080:8080   --name penguin-model-api   \
+--mount type=bind,source="$(pwd)"/data,target="/data"   penguin-model-api
+```

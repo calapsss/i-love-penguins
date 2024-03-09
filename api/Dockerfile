@@ -6,10 +6,10 @@ FROM python:3.9
 WORKDIR /vetiver
 
 # copy  and install requirements
-COPY vetiver_requirements.txt /vetiver/requirements.txt
+COPY requirements.txt /requirements.txt
 
 #
-RUN pip install --no-cache-dir --upgrade -r /vetiver/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /requirements.txt
 
 # copy app file
 COPY app.py /vetiver/app/app.py

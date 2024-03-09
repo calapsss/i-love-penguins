@@ -6,3 +6,5 @@
 renv
 .Rprofile
 /.quarto/
+__pycache__
+/api/__pycache__
