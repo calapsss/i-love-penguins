@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Your Project Documentation - Penguins EDA</title>
+<title>Your Project Documentation - Project Architecture</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -173,8 +139,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#penguin-size-and-mass-by-sex-and-species" id="toc-penguin-size-and-mass-by-sex-and-species" class="nav-link active" data-scroll-target="#penguin-size-and-mass-by-sex-and-species">Penguin Size and Mass by Sex and Species</a></li>
-  <li><a href="#penguin-size-vs-mass-by-species" id="toc-penguin-size-vs-mass-by-species" class="nav-link" data-scroll-target="#penguin-size-vs-mass-by-species">Penguin Size vs Mass by Species</a></li>
+  <li><a href="#project-architecture" id="toc-project-architecture" class="nav-link active" data-scroll-target="#project-architecture">Project Architecture</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#directory-structure-overview" id="toc-directory-structure-overview" class="nav-link" data-scroll-target="#directory-structure-overview">Directory Structure Overview</a></li>
+  <li><a href="#component-interaction" id="toc-component-interaction" class="nav-link" data-scroll-target="#component-interaction">Component Interaction</a></li>
+  <li><a href="#database-integration" id="toc-database-integration" class="nav-link" data-scroll-target="#database-integration">Database Integration</a></li>
+  <li><a href="#technology-stack" id="toc-technology-stack" class="nav-link" data-scroll-target="#technology-stack">Technology Stack</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -183,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Penguins EDA</h1>
+<h1 class="title">Project Architecture</h1>
 </div>
 
 
@@ -200,189 +174,82 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="penguin-size-and-mass-by-sex-and-species" class="level2">
-<h2 class="anchored" data-anchor-id="penguin-size-and-mass-by-sex-and-species">Penguin Size and Mass by Sex and Species</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dplyr'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    filter, lag</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union</code></pre>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dbplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dbplyr'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:dplyr':
-
-    ident, sql</code></pre>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  duckdb<span class="sc">::</span><span class="fu">duckdb</span>(), </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">dbdir =</span> <span class="st">"my-db.duckdb"</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">tbl</span>(con, <span class="st">"penguins"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">%&gt;%</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ends_with</span>(<span class="st">"mm"</span>) <span class="sc">|</span> <span class="fu">ends_with</span>(<span class="st">"g"</span>),</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>      \(x) <span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">collect</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>`summarise()` has grouped output by "species". You can override using the
-`.groups` argument.</code></pre>
-</div>
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<colgroup>
-<col style="width: 13%">
-<col style="width: 9%">
-<col style="width: 19%">
-<col style="width: 18%">
-<col style="width: 23%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">species</th>
-<th style="text-align: left;">sex</th>
-<th style="text-align: right;">bill_length_mm</th>
-<th style="text-align: right;">bill_depth_mm</th>
-<th style="text-align: right;">flipper_length_mm</th>
-<th style="text-align: right;">body_mass_g</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: right;">37.84000</td>
-<td style="text-align: right;">18.32000</td>
-<td style="text-align: right;">185.6000</td>
-<td style="text-align: right;">3540.000</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: right;">37.25753</td>
-<td style="text-align: right;">17.62192</td>
-<td style="text-align: right;">187.7945</td>
-<td style="text-align: right;">3368.836</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: right;">40.39041</td>
-<td style="text-align: right;">19.07260</td>
-<td style="text-align: right;">192.4110</td>
-<td style="text-align: right;">4043.493</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Chinstrap</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: right;">46.57353</td>
-<td style="text-align: right;">17.58824</td>
-<td style="text-align: right;">191.7353</td>
-<td style="text-align: right;">3527.206</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Chinstrap</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: right;">51.09412</td>
-<td style="text-align: right;">19.25294</td>
-<td style="text-align: right;">199.9118</td>
-<td style="text-align: right;">3938.971</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Gentoo</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: right;">45.62500</td>
-<td style="text-align: right;">14.55000</td>
-<td style="text-align: right;">215.7500</td>
-<td style="text-align: right;">4587.500</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Gentoo</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: right;">45.56379</td>
-<td style="text-align: right;">14.23793</td>
-<td style="text-align: right;">212.7069</td>
-<td style="text-align: right;">4679.741</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Gentoo</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: right;">49.47377</td>
-<td style="text-align: right;">15.71803</td>
-<td style="text-align: right;">221.5410</td>
-<td style="text-align: right;">5484.836</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<section id="project-architecture" class="level1">
+<h1>Project Architecture</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The “I Love Penguins” project features a modular, scalable architecture, integrating various technologies tailored for data science and DevOps.</p>
 </section>
-<section id="penguin-size-vs-mass-by-species" class="level2">
-<h2 class="anchored" data-anchor-id="penguin-size-vs-mass-by-species">Penguin Size vs Mass by Species</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
-(`stat_smooth()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
-(`geom_point()`).</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="eda_files/figure-html/compare-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="directory-structure-overview" class="level2">
+<h2 class="anchored" data-anchor-id="directory-structure-overview">Directory Structure Overview</h2>
+<p>The project includes key directories and files each serving specific functions:</p>
+<ul>
+<li><strong><code>api/</code></strong>: Contains the API server code and Dockerfile. This server interfaces with DuckDB for predictions using Vetiver models.</li>
+<li><strong><code>shiny_app/</code></strong>: Houses the Shiny application for data visualization and user interaction.</li>
+<li><strong><code>data/model/</code></strong>: Stores different versions of the Penguin model.</li>
+<li><strong><code>_quarto.yml</code> and other <code>.qmd</code> files</strong>: For generating the project documentation.</li>
+<li><strong><code>my-db.duckdb</code></strong>: The DuckDB database file used by the API.</li>
+</ul>
+</section>
+<section id="component-interaction" class="level2">
+<h2 class="anchored" data-anchor-id="component-interaction">Component Interaction</h2>
+<ul>
+<li><strong>API and Database</strong>: The API interacts with the DuckDB database for data storage and retrieval.</li>
+<li><strong>Shiny App and API</strong>: The Shiny app communicates with the API for data processing and visualization.</li>
+<li><strong>Model Management</strong>: The models are managed and versioned in <code>data/model/</code>.</li>
+</ul>
+</section>
+<section id="database-integration" class="level2">
+<h2 class="anchored" data-anchor-id="database-integration">Database Integration</h2>
+<p>The project uses DuckDB, an embedded SQL database, for efficient data management. The database is set up and managed through the R script detailed in <code>database.qmd</code>. This file includes steps such as:</p>
+<ul>
+<li>Connecting to DuckDB.</li>
+<li>Writing data to the database.</li>
+<li>Properly shutting down the connection.</li>
+</ul>
+<p>For more details on the database setup and management, refer to the <a href="./database.html">Database Management chapter</a>.</p>
+<p>##Model Creation and Analysis</p>
+<ul>
+<li><strong>Explore the Data</strong>:The <code>eda.qmd</code> file illustrates the exploratory data analysis (EDA) and the initial creation of the model. This includes:
+<ul>
+<li>Importing and connecting to the database.</li>
+<li>Summarizing data by species and sex.</li>
+<li>Visualizing relationships in the data using <code>ggplot2</code>.</li>
+</ul></li>
+</ul>
+<p>For detailed insights into the model creation process, refer to the <a href="./eda.html">EDA and Model Creation chapter</a>.</p>
+<ul>
+<li><strong>Model Development</strong>: The <code>model.qmd</code> file outlines the development and storage of the predictive model. Key steps include:
+<ul>
+<li>Data retrieval from DuckDB and preprocessing.</li>
+<li>Model definition and fitting using scikit-learn.</li>
+<li>Evaluation of model performance.</li>
+<li>Storing the model with <code>vetiver</code> and <code>pins</code> for versioning and API deployment.</li>
+</ul></li>
+</ul>
+<p>For a detailed walkthrough of the model development process, please see the <a href="./model.html">Model Development chapter</a>.</p>
+</section>
+<section id="technology-stack" class="level2">
+<h2 class="anchored" data-anchor-id="technology-stack">Technology Stack</h2>
+<ul>
+<li><strong>Docker</strong>: For containerizing the API and Shiny app.</li>
+<li><strong>DuckDB</strong>: An embedded SQL database.</li>
+<li><strong>ShinyApp</strong>: For building interactive web applications.</li>
+<li><strong>Vetiver</strong>: For versioning and deploying machine learning models.</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This architecture promotes a clear separation of responsibilities and modular development. Understanding this structure will help in effectively navigating and contributing to the project. Next, we will explore the development and management of machine learning models.</p>
+<hr>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<p>After understanding the architecture of our project, let’s move to <strong>Creating the Model and Storing</strong> it. We’ll look at how our model is built and managed.</p>
+<p><a href="model.html">Proceed to Creating the Model and Storing</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

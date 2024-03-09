@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>I Love Penguins</title>
+<title>Your Project Documentation - I Love Penguins: A DevOps Journey for Data Scientists</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">I Love Penguins</span>
+    <span class="navbar-title">Your Project Documentation</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -92,10 +92,37 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-chapters" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Chapters</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-chapters">    
+        <li>
+    <a class="dropdown-item" href="./setting-up-dev-environment.html">
+ <span class="dropdown-text">Setting Up Dev Environment</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./project-architecture.html">
+ <span class="dropdown-text">The Project Architecture</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./model.html">
+ <span class="dropdown-text">Creating the Model and Storing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./setup-api.html">
+ <span class="dropdown-text">Setup API</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./dockerizing.html">
+ <span class="dropdown-text">Dockerizing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./deployment.html">
+ <span class="dropdown-text">Deployment</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
@@ -108,14 +135,26 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#welcome-to-the-i-love-penguins-project" id="toc-welcome-to-the-i-love-penguins-project" class="nav-link active" data-scroll-target="#welcome-to-the-i-love-penguins-project">Welcome to the “I Love Penguins” Project</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#who-is-this-for" id="toc-who-is-this-for" class="nav-link" data-scroll-target="#who-is-this-for">Who Is This For?</a></li>
+  <li><a href="#what-will-you-learn" id="toc-what-will-you-learn" class="nav-link" data-scroll-target="#what-will-you-learn">What Will You Learn?</a></li>
+  <li><a href="#lets-dive-in" id="toc-lets-dive-in" class="nav-link" data-scroll-target="#lets-dive-in">Let’s Dive In!</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">I Love Penguins</h1>
+<h1 class="title">I Love Penguins: A DevOps Journey for Data Scientists</h1>
 </div>
 
 
@@ -132,9 +171,34 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Starter DevOps for Projects Data Science</strong></p>
+<section id="welcome-to-the-i-love-penguins-project" class="level1">
+<h1>Welcome to the “I Love Penguins” Project</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Welcome to the “I Love Penguins” project! This journey is inspired by the principles and teachings from <a href="https://do4ds.com">do4ds.com</a>, and it’s here to guide you through the essential DevOps practices tailored specifically for Data Scientists. Our goal is to bridge the gap between data science and DevOps, showing how these disciplines can effectively work together.</p>
+<p>Throughout this project, we will explore the usage of cutting-edge tools and technologies such as Docker, DuckDB, ShinyApp, and Vetiver. These tools are selected not just for their effectiveness but also for their relevance in the modern data science workflow.</p>
+</section>
+<section id="who-is-this-for" class="level2">
+<h2 class="anchored" data-anchor-id="who-is-this-for">Who Is This For?</h2>
+<p>This documentation is crafted for Junior Data Scientists, students, and specifically for students of Math 378 at the US Air Force Academy. Whether you’re just starting out in data science or looking to expand your skills in DevOps, this project is for you.</p>
+</section>
+<section id="what-will-you-learn" class="level2">
+<h2 class="anchored" data-anchor-id="what-will-you-learn">What Will You Learn?</h2>
+<ol type="1">
+<li><p><strong>Setting Up Dev Environment</strong>: We’ll start by setting up a development environment that is both robust and replicable.</p></li>
+<li><p><strong>The Project Architecture</strong>: Understanding the architecture of a project is key. We’ll delve into how our project is structured and why.</p></li>
+<li><p><strong>Creating the Model and Storing</strong>: Dive into model creation and explore how we manage data effectively using DuckDB.</p></li>
+<li><p><strong>Dockerizing</strong>: Unravel the complexities of Docker and how it can be used to containerize and streamline your data science workflows.</p></li>
+<li><p><strong>Deployment</strong>: Finally, we’ll discuss deployment strategies and best practices (content to be added later).</p></li>
+</ol>
+</section>
+<section id="lets-dive-in" class="level2">
+<h2 class="anchored" data-anchor-id="lets-dive-in">Let’s Dive In!</h2>
+<p>Prepare to embark on a journey that will enhance your understanding and skills in integrating DevOps practices within the realm of data science. Let’s explore, learn, and grow together in the fascinating world of “I Love Penguins”!</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
